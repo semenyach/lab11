@@ -22,7 +22,7 @@ print(newRestaurant.type, "\n")
 newRestaurant.describe_restaurant()
 newRestaurant.open_restaurant()
 
-def zad2():
+def zad23():
     restaurant1 = Restaurant("Тбилисо", "Грузинская", 3)
     restaurant2 = Restaurant("Хочу харчо", "Мегрельская", 3)
     restaurant3 = Restaurant("Garcon", "Французская", 3)
@@ -34,7 +34,7 @@ def zad2():
     restaurant3.describe_restaurant()
     restaurant3.changerating()
 
-zad2()
+zad23()
 
 
 
