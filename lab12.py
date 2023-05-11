@@ -38,9 +38,7 @@ class IceCreamStand(Restaurant):
         else:
             print(f"{f} не в наличии")
 
-IceCreamStand1 = IceCreamStand("Гуща", "Итальянская", ["Пломбир", "Шоколадное", "Крем-брюле"], "Большая Морская 18", "10:00 - 20:00")
-IceCreamStand1.describe_restaurant()
-IceCreamStand1.showf()
+
 class Eskimo(IceCreamStand):
     def __init__(self, restaurant_name, cuisine_type, flavors, location, works):
         super().__init__(restaurant_name, cuisine_type, flavors, location, works)
@@ -62,18 +60,25 @@ class SoftIceCream(IceCreamStand):
     def removesoft(self, flavor):
         self.removef("Мягкое " + flavor)
 
+IceCreamStand1 = IceCreamStand("Гуща", "Итальянская", ["Пломбир", "Шоколадное", "Крем-брюле"], "Большая Морская 18", "10:00 - 20:00")
+
+Eskimo1 = Eskimo("Кинокухня", "Кавказская", ["Ванильное", "Клубничное", "Вишнёвое"], "Вознесенский 44-46", "9:00 - 18:00")
+
+Soft1 = SoftIceCream("Cool cream", "Индийская", ["Ванильное", "Шоколадное", "Апельсиновое"], "Садовая 54", "12:00 - 22:00")
 
 IceCreamStand1.addf("Клубничное")
 IceCreamStand1.removef("Крем-брюле")
+IceCreamStand1.showf()
 IceCreamStand1.checkf()
 
-Eskimo1 = Eskimo("Кинокухня", "Кавказская", ["Ванильное", "Клубничное", "Вишнёвое"], "Вознесенский 44-46",
-                                      "9:00 - 18:00")
-Eskimo1.add_stick_ice_cream("Пломбир")
-Eskimo1.remove_stick_ice_cream("Эскимо Ванильное")
 
-Soft1 = SoftIceCream("Cool cream", "Индийская", ["Ванильное", "Шоколадное", "Апельсиновое"],
-                                    "Садовая 54", "12:00 - 22:00")
-Soft1.addsoft("Мятное")
-Soft1.removesoft("Шоколадное")
-Eskimo1.showf()
+
+root = Tk()
+root['bg'] = '#ffffff'
+fl=Label(text='Доступные вкусы:')
+fl.pack()
+for i in IceCreamStand1.flavors:
+    text=Entry(width=20)
+    text.insert(0, i)
+    text.pack()
+root.mainloop()
